@@ -2,8 +2,8 @@
 //  main.swift
 //  Question11
 //
-//  Created by Francisco Freitas on 2017-10-10.
-//  Copyright © 2017 FranciscoFreitas. All rights reserved.
+//  Created by Araceli Teixeira on 10/10/17.
+//  Copyright © 2017 Araceli Teixeira. All rights reserved.
 //
 
 import Foundation
