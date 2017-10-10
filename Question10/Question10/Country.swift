@@ -21,11 +21,11 @@ class Country {
         countriesBordering = [Country()]
     }
     
-    init(_ name: String, _ capital: String, _ area: Double, _ countriesBordering: [Country]) {
+    init(_ name: String, _ capital: String, _ area: Double) {
         self.name = name
         self.capital = capital
         self.area = area
-        self.countriesBordering = countriesBordering
+        self.countriesBordering = []
     }
     
     func getName() -> String {
@@ -62,11 +62,11 @@ class Country {
     }
     
     func sameNeighbours(_ country: Country) -> [Country] {
-        var sameNeighbours: [Country] = [Country()]
+        var sameNeighbours: [Country] = []
         
         for elementParameter in country.getCountriesBordering() {
             for elementInternal in getCountriesBordering() {
-                if (isSameCountry(elementParameter)) {
+                if (elementInternal.isSameCountry(elementParameter)) {
                     sameNeighbours.append(elementInternal)
                 }
             }
