@@ -8,12 +8,11 @@
 
 import Foundation
 
+enum TypeOfTransaction {
+    case credit, debit
+}
+
 class Transaction {
-    
-    enum TypeOfTransaction {
-        case credit, debit
-    }
-    
     private var description: String
     private var value: Double
     private var typeOfTransaction: TypeOfTransaction

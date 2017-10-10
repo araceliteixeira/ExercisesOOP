@@ -17,22 +17,22 @@ class BankAccount: Equatable {
     private var balance: Double
     private var isSpecial: Bool
     private var limit: Double
-    private var numberOfTransactions: UInt16
+    private var transactions: [Transaction]
     
     init () {
         number = 0
         balance = 0.0
         isSpecial = false
         limit = 0.0
-        numberOfTransactions = 0
+        transactions = []
     }
     
-    init(_ number: UInt16, _ balance: Double, _ isSpecial: Bool, _ limit: Double, _ numberOfTransactions: UInt16) {
+    init(_ number: UInt16, _ balance: Double, _ isSpecial: Bool, _ limit: Double) {
         self.number = number
         self.balance = balance
         self.isSpecial = isSpecial
         self.limit = limit
-        self.numberOfTransactions = numberOfTransactions
+        self.transactions = []
     }
     
     func getNumber() -> UInt16 {
@@ -59,11 +59,26 @@ class BankAccount: Equatable {
     func setLimit(_ limit: Double) {
         self.limit = limit
     }
-    func getNumberOfTransactions() -> UInt16 {
-        return numberOfTransactions
+    func getTransactions() -> [Transaction] {
+        return transactions
     }
-    func setNumberOfTransactions(_ numberOfTransactions: UInt16) {
-        self.numberOfTransactions = numberOfTransactions
+    func setTransactions(_ transactions: [Transaction]) {
+        self.transactions = transactions
+    }
+    func insertTransaction(_ transaction: Transaction) {
+        if transaction.getTypeOfTransaction() == TypeOfTransaction.credit {
+            balance += transaction.getValue()
+        } else {
+            balance -= transaction.getValue()
+        }
+        transactions.append(transaction)
+    }
+    func getStatement() -> String {
+        var statement = ""
+        for t in transactions {
+            statement += "\(t.getDescription()) - Value $\(t.getValue()) - \(t.getTypeOfTransaction())\n"
+        }
+        return statement
     }
 }
 
