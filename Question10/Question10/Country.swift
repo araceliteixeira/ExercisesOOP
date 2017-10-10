@@ -11,17 +11,17 @@ import Foundation
 class Country {
     private var name: String
     private var capital: String
-    private var area: UInt32
+    private var area: Double
     private var countriesBordering: [Country]
     
     init () {
         name = ""
         capital = ""
-        area = 0
+        area = 0.0
         countriesBordering = [Country()]
     }
     
-    init(_ name: String, _ capital: String, _ area: UInt32, _ countriesBordering: [Country]) {
+    init(_ name: String, _ capital: String, _ area: Double, _ countriesBordering: [Country]) {
         self.name = name
         self.capital = capital
         self.area = area
@@ -40,10 +40,10 @@ class Country {
     func setCapital(_ capital: String) {
         self.capital = capital
     }
-    func getArea() -> UInt32 {
+    func getArea() -> Double {
         return area
     }
-    func setArea(_ area: UInt32) {
+    func setArea(_ area: Double) {
         self.area = area
     }
     func getCountriesBordering() -> [Country] {

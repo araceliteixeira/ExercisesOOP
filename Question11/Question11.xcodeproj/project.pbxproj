@@ -28,9 +28,9 @@
 /* Begin PBXFileReference section */
 		168068691F8D3D8500BAB619 /* Question11 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Question11; sourceTree = BUILT_PRODUCTS_DIR; };
 		1680686C1F8D3D8500BAB619 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		168068731F8D3DB200BAB619 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transaction.swift; path = Question11/Transaction.swift; sourceTree = "<group>"; };
-		168068741F8D3DB200BAB619 /* Bank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bank.swift; path = Question11/Bank.swift; sourceTree = "<group>"; };
-		168068751F8D3DB200BAB619 /* BankAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BankAccount.swift; path = Question11/BankAccount.swift; sourceTree = "<group>"; };
+		168068731F8D3DB200BAB619 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		168068741F8D3DB200BAB619 /* Bank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		168068751F8D3DB200BAB619 /* BankAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +47,6 @@
 		168068601F8D3D8500BAB619 = {
 			isa = PBXGroup;
 			children = (
-				168068741F8D3DB200BAB619 /* Bank.swift */,
-				168068751F8D3DB200BAB619 /* BankAccount.swift */,
-				168068731F8D3DB200BAB619 /* Transaction.swift */,
 				1680686B1F8D3D8500BAB619 /* Question11 */,
 				1680686A1F8D3D8500BAB619 /* Products */,
 			);
@@ -66,6 +63,9 @@
 		1680686B1F8D3D8500BAB619 /* Question11 */ = {
 			isa = PBXGroup;
 			children = (
+				168068741F8D3DB200BAB619 /* Bank.swift */,
+				168068751F8D3DB200BAB619 /* BankAccount.swift */,
+				168068731F8D3DB200BAB619 /* Transaction.swift */,
 				1680686C1F8D3D8500BAB619 /* main.swift */,
 			);
 			path = Question11;
