@@ -13,6 +13,7 @@ class Classroom {
     private var roomId: Int
     private var allocationFrom: NSDate
     private var allocationTo: NSDate
+    private let dateFormatter = DateFormatter()
     
     init () {
         students = []
@@ -21,6 +22,17 @@ class Classroom {
         allocationTo = NSDate()
     }
     
+    init (_ roomId: Int, _ allocationFrom: String, _ allocationTo: String) {
+        students = []
+        self.roomId = roomId
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        self.allocationFrom = dateFormatter.date(from: allocationFrom)! as NSDate
+        self.allocationTo = dateFormatter.date(from: allocationTo)! as NSDate
+    }
+    
+    func addStudent(_ student: Student) {
+        students.append(student)
+    }
     func getStudents() -> [Student] {
         return students
     }
@@ -33,21 +45,22 @@ class Classroom {
     func setRoomId(_ roomId: Int) {
         self.roomId = roomId
     }
-    func getAllocationFrom() -> NSDate {
-        return allocationFrom
+    func getAllocationFrom() -> String {
+        return dateFormatter.string(from: allocationFrom as Date)
     }
-    func setAllocationFrom(_ allocationFrom: NSDate) {
-        self.allocationFrom = allocationFrom
+    func setAllocationFrom(_ allocationFrom: String) {
+        self.allocationFrom = dateFormatter.date(from: allocationFrom)! as NSDate
     }
-    func getAllocationTo() -> NSDate {
-        return allocationTo
+    func getAllocationTo() -> String {
+        return dateFormatter.string(from: allocationTo as Date)
     }
-    func setAllocationTo(_ allocationTo: NSDate) {
-        self.allocationTo = allocationTo
+    func setAllocationTo(_ allocationTo: String) {
+        self.allocationTo = dateFormatter.date(from: allocationTo)! as NSDate
     }
     
-    func isFree(_ date: NSDate) -> Bool {
-        return date.timeIntervalSince1970 < allocationFrom.timeIntervalSince1970 && date.timeIntervalSince1970 > allocationTo.timeIntervalSince1970
+    func isFree(_ date: String) -> Bool {
+        let date = dateFormatter.date(from: date)! as NSDate
+        return date.timeIntervalSince1970 < allocationFrom.timeIntervalSince1970 || date.timeIntervalSince1970 > allocationTo.timeIntervalSince1970
     }
     
     func totalStudentsPerProgram() -> [(Program, Int)] {

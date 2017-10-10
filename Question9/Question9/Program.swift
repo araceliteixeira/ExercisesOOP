@@ -21,9 +21,9 @@ class Program: Equatable {
         classrooms = []
     }
     
-    init(_ name: String, _ classrooms: [Classroom]) {
+    init(_ name: String) {
         self.name = name
-        self.classrooms = classrooms
+        self.classrooms = []
     }
     
     func getName() -> String {
@@ -42,7 +42,7 @@ class Program: Equatable {
     func totalStudents() -> Int {
         var total = 0
         for c in classrooms {
-            total += c.getStudents().count
+            total += c.totalStudentsInProgram(self)
         }
         return total
     }
